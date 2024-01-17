@@ -1,7 +1,10 @@
 package com.jero.pruebaspring.app.model;
 
 import jakarta.persistence.*;
-@Entity
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+@Document
 public class Persona {//Esta clase es una entidad, por ende se puede almacenar en una base de datos
 
 
@@ -17,13 +20,13 @@ public class Persona {//Esta clase es una entidad, por ende se puede almacenar e
 
     @Id//Con esto indicamos que la variable idPersona es la clave primaria para buscar a nuestros objetos en la base de datos
     private Long idPersona;
-    @Column(name = "nombre", length = 50)//Las columnas especifican detalles sobre como los campos de la entidad deben ser mapeados
+    @Field//Las columnas especifican detalles sobre como los campos de la entidad deben ser mapeados
     private String nombre;
-    @Column(name = "apellido", length = 50)
+    @Field
     private String apellido;
-    @Column(name = "Edad", length = 3)
+    @Field
     private Integer edad;
-    @Column(name = "Telefono", length = 20)
+    @Field
     private Integer telefono;
 //Abajo de aca estan los setters and getters
     public Long getIdPersona() {

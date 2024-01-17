@@ -1,5 +1,5 @@
 package com.jero.pruebaspring.app.Service;
-import com.jero.pruebaspring.app.Controller.PersonaNotFoundException;
+import com.jero.pruebaspring.app.Exceptions.PersonaNotFoundException;
 import com.jero.pruebaspring.app.model.Persona;
 import com.jero.pruebaspring.app.repository.IPersonaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
