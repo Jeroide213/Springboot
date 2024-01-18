@@ -40,9 +40,10 @@ public class PersonaServiceImpl implements IPersonaService {//Esta clase tipo se
         return personaRepo.findAll();
     }
     @Override
-    public Persona obtenerPersonaPorId(Long id){//Implementa la logica para buscar un solo objeto por id
-        Optional<Persona> personaOptional = personaRepo.findById(id);
-        return personaOptional.orElse(null);
+    public ResponseEntity<Persona> obtenerPersonaPorId(Long id) {
+        Optional<Persona> persona = personaRepo.findById(id);
+        return persona.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
     @Override
     public ResponseEntity<Persona> deletePersonaById(Long idPersona) {//Implementa la logica para borrar un objeto por id
